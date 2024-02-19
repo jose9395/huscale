@@ -87,7 +87,7 @@ const express = require('express');
 const multer = require('multer');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const sharp = require('sharp');
-
+require('dotenv').config();
 const app = express();
 const port = 3000; // You can use any port
 const upload = multer();
