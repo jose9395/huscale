@@ -89,7 +89,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const sharp = require('sharp');
 require('dotenv').config();
 const app = express();
-const port = 3000; // You can use any port
+const port =process.env.PORT || 3000; // You can use any port
 const upload = multer();
 
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
@@ -140,4 +140,4 @@ async function fileToGenerativePart(buffer, originalMimeType) {
     }
 }
 
-app.listen(process.env.PORT || port, () => console.log(`Server running on port ${port}`));
+app.listen( port, () => console.log(`Server running on port ${port}`));
